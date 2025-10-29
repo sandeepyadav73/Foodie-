@@ -1,0 +1,773 @@
+/* ======== 0. GLOBAL STYLES & VARIABLES ======== */
+:root {
+    --primary-color: #FF6B35;
+    /* Warm Orange */
+    --secondary-color: #F7C59F;
+    /* Light Peach */
+    --dark-color: #2F2F2F;
+    /* Dark Grey */
+    --text-color: #555;
+    --light-bg: #FFF8F0;
+    /* Off-white */
+    --white: #FFFFFF;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    line-height: 1.6;
+    background: var(--white);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+    color: var(--dark-color);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* ======== 1. UTILITIES (Buttons) ======== */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: #e05c2e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(255, 107, 53, 0.3);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--white);
+}
+
+.btn-secondary:hover {
+    background: transparent;
+    color: var(--white);
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background: var(--secondary-color);
+    color: var(--dark-color);
+}
+
+.btn-sm:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+
+/* ======== 2. NAVBAR ======== */
+.navbar {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    padding: 1rem 0;
+    position: sticky;
+    /* fixed-top class se fixed karein */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar.fixed-top {
+    position: sticky;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* Underline hover effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+.hamburger-menu {
+    display: none;
+    /* Mobile only */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--dark-color);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+/* ======== 3. FOOTER ======== */
+.footer {
+    background: var(--dark-color);
+    color: #f4f4f4;
+    padding-top: 3rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.footer-section .logo {
+    color: var(--white);
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.footer-section h4 {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul a {
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul a:hover {
+    color: var(--primary-color);
+}
+
+.social-icons a {
+    color: #ccc;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid #444;
+}
+
+/* ======== 4. HOME PAGE: HERO ======== */
+.hero {
+    min-height: 90vh;
+    /* Parallax Effect */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 20px;
+}
+
+.hero-content {
+    /* Fade-in animation */
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons .btn {
+    margin: 0 0.5rem;
+}
+
+/* ======== 5. HOME PAGE: HIGHLIGHTS ======== */
+.highlights {
+    padding: 4rem 0;
+    background: var(--light-bg);
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.highlight-card {
+    background: var(--white);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.highlight-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* ======== 6. COMMON: PAGE HEADER ======== */
+.page-header {
+    background: var(--light-bg);
+    padding: 4rem 0;
+    text-align: center;
+    margin-top: 60px;
+    /* Adjust for fixed navbar height */
+}
+
+.page-header h1 {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* ======== 7. MENU PAGE ======== */
+.menu-page {
+    padding: 4rem 0;
+}
+
+.menu-filters {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    margin: 0.3rem;
+    background: var(--light-bg);
+    color: var(--text-color);
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: var(--secondary-color);
+}
+
+/* Style for active filter */
+.menu-filters input[type="radio"]:checked+.filter-btn {
+    background: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.dish-card {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dish-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dish-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.3s ease;
+}
+
+.dish-card:hover img {
+    transform: scale(1.05);
+}
+
+.dish-info {
+    padding: 1.5rem;
+}
+
+.dish-info h3 {
+    margin-bottom: 0.5rem;
+}
+
+.dish-info p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.dish-info .price {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* CSS Filter Logic */
+#filter-all:checked~.menu-grid .dish-card {
+    display: block;
+}
+
+#filter-starters:checked~.menu-grid .dish-card {
+    display: none;
+}
+
+#filter-starters:checked~.menu-grid .dish-card[data-category="starters"] {
+    display: block;
+}
+
+#filter-main:checked~.menu-grid .dish-card {
+    display: none;
+}
+
+#filter-main:checked~.menu-grid .dish-card[data-category="main"] {
+    display: block;
+}
+
+#filter-desserts:checked~.menu-grid .dish-card {
+    display: none;
+}
+
+#filter-desserts:checked~.menu-grid .dish-card[data-category="desserts"] {
+    display: block;
+}
+
+/* ======== 8. ABOUT PAGE ======== */
+.about-story {
+    padding: 4rem 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text {
+    animation: fadeInRight 1s ease-out;
+}
+
+.about-image {
+    animation: fadeInLeft 1s ease-out;
+}
+
+.stats {
+    padding: 4rem 0;
+    background: var(--primary-color);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    text-align: center;
+    color: var(--white);
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    color: var(--white);
+}
+
+.team {
+    padding: 4rem 0;
+    background: var(--light-bg);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.team-card {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+}
+
+.team-card img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--white);
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+}
+
+.team-card p {
+    font-style: italic;
+    color: var(--primary-color);
+}
+
+/* ======== 9. CONTACT PAGE ======== */
+.contact-page {
+    padding: 4rem 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-info h3,
+.contact-form-container h3 {
+    margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.2rem;
+}
+
+.contact-info i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.map-embed {
+    margin-top: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.map-embed iframe {
+    border: 0;
+}
+
+/* Floating Labels Form */
+.form-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 0.5rem;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background: transparent;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    outline: none;
+    position: relative;
+    z-index: 1;
+}
+
+.form-group label {
+    position: absolute;
+    top: 0.8rem;
+    left: 0.5rem;
+    color: #aaa;
+    transition: all 0.3s ease;
+    z-index: 0;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-bottom-color: var(--primary-color);
+}
+
+/* Floating label animation */
+.form-group input:focus+label,
+.form-group input:not(:placeholder-shown)+label,
+.form-group textarea:focus+label,
+.form-group textarea:not(:placeholder-shown)+label {
+    top: -1.2rem;
+    left: 0;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+.contact-form .btn {
+    width: 100%;
+}
+
+/* ======== 10. ANIMATIONS ======== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ======== 11. RESPONSIVE DESIGN ======== */
+
+@media (max-width: 992px) {
+
+    .menu-grid,
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    /* Hamburger Menu Logic */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70%;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 6rem 2rem 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.5rem;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        z-index: 1001;
+        /* Must be above nav-links */
+    }
+
+    /* Toggle Nav */
+    .nav-toggle:checked~.nav-links {
+        transform: translateX(0);
+    }
+
+    /* Hamburger "X" animation */
+    .nav-toggle:checked+.hamburger-menu span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle:checked+.hamburger-menu span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle:checked+.hamburger-menu span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Page Layouts */
+    .highlights-grid,
+    .menu-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-icons {
+        text-align: center;
+    }
+}

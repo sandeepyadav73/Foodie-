@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Menu - Foodie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="navbar fixed-top">
+        <nav class="container">
+            <a href="index.html" class="logo">Foodie 🍝</a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+            <label for="nav-toggle" class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Our Delicious Menu</h1>
+            </div>
+        </section>
+
+        <section class="menu-page">
+            <div class="container">
+
+                <div class="menu-filters">
+                    <input type="radio" id="filter-all" name="menu-filter" hidden checked>
+                    <label for="filter-all" class="filter-btn">All</label>
+
+                    <input type="radio" id="filter-starters" name="menu-filter" hidden>
+                    <label for="filter-starters" class="filter-btn">Starters</label>
+
+                    <input type="radio" id="filter-main" name="menu-filter" hidden>
+                    <label for="filter-main" class="filter-btn">Main Course</label>
+
+                    <input type="radio" id="filter-desserts" name="menu-filter" hidden>
+                    <label for="filter-desserts" class="filter-btn">Desserts</label>
+                </div>
+
+                <div class="menu-grid">
+                    <div class="dish-card" data-category="starters">
+                        <img src="assets/bruscheta.png" alt="Bruschetta">
+                        <div class="dish-info">
+                            <h3>Bruschetta</h3>
+                            <p>Toasted bread topped with fresh tomatoes, garlic, and basil.</p>
+                            <span class="price">$8.99</span>
+                            <a href="#" class="btn btn-sm">Order Now</a>
+                        </div>
+                    </div>
+
+                    <div class="dish-card" data-category="main">
+                        <img src="assets/carbonara.png"
+                            alt="Spaghetti">
+                        <div class="dish-info">
+                            <h3>Spaghetti Carbonara</h3>
+                            <p>Classic pasta with creamy egg sauce, pancetta, and pecorino.</p>
+                            <span class="price">$14.50</span>
+                            <a href="#" class="btn btn-sm">Order Now</a>
+                        </div>
+                    </div>
+
+                    <div class="dish-card" data-category="desserts">
+                        <img src="assets/tiramisu.png" alt="Tiramisu">
+                        <div class="dish-info">
+                            <h3>Tiramisu</h3>
+                            <p>Coffee-flavoured Italian dessert. Ladyfingers, mascarpone, cocoa.</p>
+                            <span class="price">$7.00</span>
+                            <a href="#" class="btn btn-sm">Order Now</a>
+                        </div>
+                    </div>
+
+                    <div class="dish-card" data-category="main">
+                        <img src="assets/Grilled.png"
+                            alt="Grilled Salmon">
+                        <div class="dish-info">
+                            <h3>Grilled Salmon</h3>
+                            <p>Served with asparagus and a lemon-butter sauce.</p>
+                            <span class="price">$18.00</span>
+                            <a href="#" class="btn btn-sm">Order Now</a>
+                        </div>
+                    </div>
+
+                    <div class="dish-card" data-category="starters">
+                        <img src="assets/Caesar.jpeg"
+                            alt="Caesar Salad">
+                        <div class="dish-info">
+                            <h3>Caesar Salad</h3>
+                            <p>Crisp romaine lettuce with parmesan, croutons, and dressing.</p>
+                            <span class="price">$9.50</span>
+                            <a href="#" class="btn btn-sm">Order Now</a>
+                        </div>
+                    </div>
+
+                    <div class="dish-card" data-category="desserts">
+                        <img src="assets/Panna-cot.jpg" alt="Panna Cotta">
+                        <div class="dish-info">
+                            <h3>Panna Cotta</h3>
+                            <p>Creamy Italian pudding served with a berry coulis.</p>
+                            <span class="price">$6.50</span>
+                            <a href="#" class="btn btn-sm">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <a href="index.html" class="logo">Foodie 🍝</a>
+                <p>Serving the best food in town since 2015.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 — Made with ❤️ by Sandeep Yadav</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

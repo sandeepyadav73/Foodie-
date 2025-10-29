@@ -8,13 +8,7 @@
 
 Is project ka main goal advanced CSS techniques ko showcase karna hai, jaise ki pure-CSS interactive elements, responsive layouts, aur modern design principles.
 
-
-*(Note: Yahaan apne project ka screenshot add karein!)*
-
 <img width="959" height="443" alt="image" src="https://github.com/user-attachments/assets/a68d35dd-1944-4167-94c4-212b52998d8e" /><img width="959" height="443" alt="image" src="https://github.com/user-attachments/assets/aef8781c-d1c9-4c99-98f3-d315707a3f03" /><img width="959" height="439" alt="image" src="https://github.com/user-attachments/assets/790d3ad8-55f2-44e9-9057-6fdc77837b32" /><img width="959" height="442" alt="image" src="https://github.com/user-attachments/assets/467f10a4-3e2f-41b9-86b3-a594b979c240" />
-
-
-
 
 
 ## ✨ Features
@@ -65,11 +59,11 @@ Is project ko run karne ke liye kisi setup ya dependency ki zaroorat nahi hai.
 
 1.  **Repository ko Clone/Download karein:**
     ```bash
-    git clone [https://github.com/your-username/foodie-restaurant-website.git](https://github.com/your-username/foodie-restaurant-website.git)
+    git clone [https://github.com/sandeepyadav73/Foodie-.git](https://github.com/sandeepyadav73/Foodie-.git)
     ```
 2.  **Project folder mein navigate karein:**
     ```bash
-    cd foodie-restaurant-website
+    cd Foodie
     ```
 3.  **`index.html` file ko open karein:**
     Bas `index.html` file ko apne web browser mein double-click karke open karein aur website ko explore karein.
